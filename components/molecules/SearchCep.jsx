@@ -12,14 +12,17 @@ export default function SearchCep({
 }) {
   const [error, setError] = useState(null);
   async function handleSubmit(data) {
+    const server = process.env.BACKEND_URL;
+    console.log("dsada", server);
     setIsloading(true);
     const normalizedCep = data.cep.replace(/[^0-9]/g, "");
     try {
       const resultado = await axios.request({
         method: "get",
-        url: `http://localhost:3000/addresses/${normalizedCep}`,
+        url: `${server}/addresses/${normalizedCep}`,
       });
       saveRequest(resultado.data[0]);
+      setError(null);
     } catch (err) {
       setError("Houve algum erro na requisição");
     } finally {

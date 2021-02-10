@@ -9,11 +9,11 @@ Tecnologias
 
 ## Rodando o projeto
 
-Dependencias:
+Dependências:
 
 1. yarn ou npm
 
-- Instalando dependencias
+- Instalando dependências
 
 ```bash
 yarn
